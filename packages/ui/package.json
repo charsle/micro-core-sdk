@@ -1,5 +1,5 @@
 {
-  "name": "@charsle/micro-ui",
+  "name": "@axewo/micro-ui",
   "version": "1.0.0",
   "publishConfig": {
     "access": "public"
@@ -29,8 +29,8 @@
     }
   },
   "devDependencies": {
-    "@charsle/micro-core": "workspace:*",
-    "@charsle/micro-shared": "workspace:*",
+    "@axewo/micro-core": "workspace:*",
+    "@axewo/micro-shared": "workspace:*",
     "vue": "^3.5.0",
     "vue-router": "^4.6.0",
     "vue-i18n": "^11.4.6",

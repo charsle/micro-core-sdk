@@ -1,5 +1,5 @@
 {
-  "name": "@charsle/micro-core",
+  "name": "@axewo/micro-core",
   "version": "1.0.0",
   "publishConfig": {
     "access": "public"
@@ -30,7 +30,7 @@
     }
   },
   "devDependencies": {
-    "@charsle/micro-shared": "workspace:*",
+    "@axewo/micro-shared": "workspace:*",
     "vue": "^3.5.0",
     "vue-router": "^4.6.0",
     "pinia": "^3.0.0"

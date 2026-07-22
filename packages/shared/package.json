@@ -1,5 +1,5 @@
 {
-  "name": "@charsle/micro-shared",
+  "name": "@axewo/micro-shared",
   "version": "1.0.0",
   "publishConfig": {
     "access": "public"
