@@ -1,0 +1,48 @@
+// ===== Design Tokens =====
+// UI 包统一定义 CSS 变量，基座 import 此文件即可获得全部布局变量
+
+:root {
+  --color-primary: #1890ff;
+  --color-primary-light: #e6f7ff;
+  --color-primary-dark: #096dd9;
+
+  --color-success: #52c41a;
+  --color-warning: #faad14;
+  --color-error: #ff4d4f;
+  --color-info: #1890ff;
+
+  --color-text: #1a1a2e;
+  --color-text-secondary: #666;
+  --color-text-disabled: #bbb;
+  --color-border: #e8e8e8;
+  --color-bg: #f0f2f5;
+  --color-bg-white: #fff;
+  --color-bg-sidebar: #001529;
+  --color-bg-sidebar-hover: #002140;
+  --color-bg-sidebar-active: #1890ff;
+
+  --sidebar-width: 220px;
+  --sidebar-collapsed-width: 64px;
+  --header-height: 48px;
+  --radius: 6px;
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+// ===== 暗色主题 =====
+:root.theme-dark {
+  --color-primary: #4096ff;
+  --color-primary-light: #111a2c;
+  --color-primary-dark: #69b1ff;
+
+  --color-text: #e8e8e8;
+  --color-text-secondary: #999;
+  --color-text-disabled: #555;
+  --color-border: #303030;
+  --color-bg: #141414;
+  --color-bg-white: #1f1f1f;
+  --color-bg-sidebar: #0a0a0a;
+  --color-bg-sidebar-hover: #1a1a1a;
+  --color-bg-sidebar-active: #1668dc;
+
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}

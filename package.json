@@ -1,0 +1,18 @@
+{
+  "name": "micro-core-sdk",
+  "private": true,
+  "description": "Micro Frontend Core SDK — Shared utilities, core store, and shared UI components",
+  "scripts": {
+    "build": "pnpm -r build",
+    "type-check": "pnpm -r type-check"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "pinia": "^3.0.0",
+    "typescript": "^5.7.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.6.0"
+  }
+}

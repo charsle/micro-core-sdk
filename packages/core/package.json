@@ -1,0 +1,38 @@
+{
+  "name": "@charsle/micro-core",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Micro Frontend Core — Store, permissions, guards, error handling, env config",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types.ts",
+    "./store": "./src/store/index.ts",
+    "./directives": "./src/directives/index.ts",
+    "./guards": "./src/guards/index.ts",
+    "./plugins": "./src/plugins/index.ts",
+    "./config": "./src/config/index.ts"
+  },
+  "scripts": {
+    "type-check": "vue-tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0",
+    "vue-router": "^4.0.0 || ^5.0.0",
+    "pinia": "^2.0.0 || ^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "pinia": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@charsle/micro-shared": "workspace:*",
+    "vue": "^3.5.0",
+    "vue-router": "^4.6.0",
+    "pinia": "^3.0.0"
+  }
+}
