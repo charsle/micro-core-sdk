@@ -34,7 +34,7 @@
     }
   },
   "devDependencies": {
-    "@axewo/micro-shared": "workspace:*",
+    "@axewo/micro-shared": "^1.0.0",
     "vue": "^3.5.0",
     "vue-router": "^4.6.0",
     "pinia": "^3.0.0"

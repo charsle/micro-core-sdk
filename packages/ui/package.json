@@ -33,8 +33,8 @@
     }
   },
   "devDependencies": {
-    "@axewo/micro-core": "workspace:*",
-    "@axewo/micro-shared": "workspace:*",
+    "@axewo/micro-core": "^1.0.0",
+    "@axewo/micro-shared": "^1.0.0",
     "vue": "^3.5.0",
     "vue-router": "^4.6.0",
     "vue-i18n": "^11.4.6",
