@@ -262,6 +262,21 @@ export interface UnmountProps {
   container: HTMLElement
 }
 
+/**
+ * 强类型事件 Payload 映射契约
+ */
+export interface EventPayloadMap {
+  'user:login': { userId: string | number; username: string }
+  'user:logout': void
+  'token:expired': { reason?: string }
+  'theme:change': 'light' | 'dark'
+  'lang:change': 'zh-CN' | 'en-US'
+  'tab:open': OpenTabOptions
+  'tab:close': string
+  'route:navigate': { path: string; query?: Record<string, any> }
+  [key: string]: any
+}
+
 // ===== ===== ===== 事件总线接口 ===== ===== =====
 
 /**
@@ -271,10 +286,14 @@ export interface UnmountProps {
 export interface MicroEventBus {
   /** 订阅事件 */
   on(channel: string, callback: EventCallback): () => void
+  /** 订阅强类型事件 */
+  onTyped<K extends keyof EventPayloadMap>(channel: K, callback: (payload: EventPayloadMap[K]) => void): () => void
   /** 订阅事件（仅触发一次） */
   once(channel: string, callback: EventCallback): () => void
   /** 发布事件 */
   emit(channel: string, payload?: unknown): void
+  /** 发布强类型事件 */
+  emitTyped<K extends keyof EventPayloadMap>(channel: K, payload?: EventPayloadMap[K]): void
   /** 仅本地广播（不回传基座）——子应用接收基座下发事件时使用，避免事件回环 */
   emitLocal(channel: string, payload?: unknown, source?: string): void
   /** 取消订阅 */

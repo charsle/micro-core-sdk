@@ -14,7 +14,7 @@
 
 import { isMicroAppEnv, getMicroAppName, dispatchToMain } from './micro-bridge'
 import { logger } from './logger'
-import type { BusEvent, EventCallback, MicroEventBus, OpenTabOptions, DynamicMenuItem } from '../types'
+import type { BusEvent, EventCallback, MicroEventBus, OpenTabOptions, DynamicMenuItem, EventPayloadMap } from '../types'
 import { BusChannel } from '../types'
 
 // ===== 内部实现 =====
@@ -33,6 +33,17 @@ class EventBusImpl implements MicroEventBus {
     }
   }
 
+  /** 订阅强类型事件 */
+  onTyped<K extends keyof EventPayloadMap>(
+    channel: K,
+    callback: (payload: EventPayloadMap[K]) => void
+  ): () => void {
+    const wrapper: EventCallback = (event) => {
+      callback(event.payload as EventPayloadMap[K])
+    }
+    return this.on(channel as string, wrapper)
+  }
+
   /** 订阅事件（仅触发一次） */
   once(channel: string, callback: EventCallback): () => void {
     const wrapper: EventCallback = (event) => {
@@ -40,6 +51,11 @@ class EventBusImpl implements MicroEventBus {
       this.off(channel, wrapper)
     }
     return this.on(channel, wrapper)
+  }
+
+  /** 发布强类型事件 */
+  emitTyped<K extends keyof EventPayloadMap>(channel: K, payload?: EventPayloadMap[K]): void {
+    this.emit(channel as string, payload)
   }
 
   /** 发布事件 */
