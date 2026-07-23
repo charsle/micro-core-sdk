@@ -270,3 +270,6 @@ export function onAppMessage(
     callback(payload, from)
   })
 }
+
+/** 单例 EventBus 引用 */
+export const eventBus = getEventBus()

@@ -16,7 +16,7 @@ export interface PreloadAppItem {
 
 class SmartPreloader {
   private preloadedApps = new Set<string>()
-  private hoverTimers = new Map<string, NodeJS.Timeout>()
+  private hoverTimers = new Map<string, ReturnType<typeof setTimeout>>()
 
   /**
    * 触发单个子应用预加载

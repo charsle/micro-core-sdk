@@ -20,7 +20,7 @@
     }
   },
   "scripts": {
-    "build": "vue-tsc --emitDeclarationOnly && vite build",
+    "build": "vite build",
     "type-check": "vue-tsc --noEmit"
   },
   "peerDependencies": {

@@ -13,10 +13,9 @@
 
 const isDev = (): boolean => {
   try {
-    // Vite / Rspack 均注入 process.env.NODE_ENV
-    return process.env.NODE_ENV !== 'production'
+    return typeof process !== 'undefined' ? process.env?.NODE_ENV !== 'production' : true
   } catch {
-    return false
+    return true
   }
 }
 
