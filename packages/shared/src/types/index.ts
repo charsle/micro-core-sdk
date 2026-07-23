@@ -163,7 +163,12 @@ export interface EventPayloadMap {
   [BusChannel.MENU_REGISTER]: { appName: string; menus: DynamicMenuItem[] }
   [BusChannel.CUSTOM]: unknown
   [BusChannel.APP_TO_APP]: { target: string; channel: string; payload?: unknown; from?: string }
-  [key: string]: unknown
+  'user:login': { userId: string | number; username: string }
+  'user:logout': void
+  'token:expired': { reason?: string }
+  'lang:change': 'zh-CN' | 'en-US'
+  'route:navigate': { path: string; query?: Record<string, any> }
+  [key: string]: any
 }
 
 /**
@@ -262,20 +267,7 @@ export interface UnmountProps {
   container: HTMLElement
 }
 
-/**
- * 强类型事件 Payload 映射契约
- */
-export interface EventPayloadMap {
-  'user:login': { userId: string | number; username: string }
-  'user:logout': void
-  'token:expired': { reason?: string }
-  'theme:change': 'light' | 'dark'
-  'lang:change': 'zh-CN' | 'en-US'
-  'tab:open': OpenTabOptions
-  'tab:close': string
-  'route:navigate': { path: string; query?: Record<string, any> }
-  [key: string]: any
-}
+
 
 // ===== ===== ===== 事件总线接口 ===== ===== =====
 
